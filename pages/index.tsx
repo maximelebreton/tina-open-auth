@@ -48,7 +48,7 @@ export default function Home({ file, preview }) {
         
         <InlineForm form={form}>
       <h1>
-        <InlineTextField name="title" />
+        <InlineTextField name="data.title" />
       </h1>
     </InlineForm>
 
