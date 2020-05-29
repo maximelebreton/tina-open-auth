@@ -8,6 +8,8 @@ import {
   useGithubToolbarPlugins,
   useForm, usePlugin
 } from 'react-tinacms-github'
+import { InlineForm, InlineTextField } from 'react-tinacms-inline'
+
 
 import { GetStaticProps } from 'next'
 
@@ -17,14 +19,15 @@ export default function Home({ file, preview }) {
     fields: [{ name: 'title', component: 'text' }],
   }
   
-    const [, form] = useForm(data)
-      usePlugin(form)
+      
 
 
   /*
    ** Register a JSON Tina Form
    */
   const [data, form] = useGithubJsonForm(file, formOptions)
+  
+  usePlugin(form)
 
   useGithubToolbarPlugins()
 
