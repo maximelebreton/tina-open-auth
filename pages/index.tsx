@@ -5,9 +5,9 @@ import Head from 'next/head'
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import {
   useGithubJsonForm,
-  useGithubToolbarPlugins,
-  useForm, usePlugin
+  useGithubToolbarPlugins
 } from 'react-tinacms-github'
+import {usePlugin} from 'tinacms'
 import { InlineForm, InlineTextField } from 'react-tinacms-inline'
 
 
