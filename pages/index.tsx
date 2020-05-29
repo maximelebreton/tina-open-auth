@@ -6,7 +6,9 @@ import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
 import {
   useGithubJsonForm,
   useGithubToolbarPlugins,
+  useForm, usePlugin
 } from 'react-tinacms-github'
+
 import { GetStaticProps } from 'next'
 
 export default function Home({ file, preview }) {
@@ -14,6 +16,10 @@ export default function Home({ file, preview }) {
     label: 'Home Page',
     fields: [{ name: 'title', component: 'text' }],
   }
+  
+    const [, form] = useForm(data)
+      usePlugin(form)
+
 
   /*
    ** Register a JSON Tina Form
@@ -36,6 +42,12 @@ export default function Home({ file, preview }) {
            */}
           {data.title}
         </h1>
+        
+        <InlineForm form={form}>
+      <h1>
+        <InlineTextField name="title" />
+      </h1>
+    </InlineForm>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
